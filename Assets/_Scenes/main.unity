@@ -162,6 +162,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 235448698}
   - 114: {fileID: 235448697}
+  - 114: {fileID: 235448699}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -183,6 +184,8 @@ MonoBehaviour:
   kitchenPrefab: {fileID: 102336, guid: 35eb99ac1ac34d540941dd1c01f685a2, type: 2}
   PowerPrefab: {fileID: 194846, guid: eb07c7e9abf0b6a469a4451ab8935ec8, type: 2}
   WaterPrefab: {fileID: 166724, guid: 264473b0b50a20445b8ff1a9d1a9ee39, type: 2}
+  entrancePrefab: {fileID: 145150, guid: 77aa36846626a41499d8b4e0fec28f4f, type: 2}
+  placeHoldPrefab: {fileID: 149966, guid: 979e7eed9e640f240a78a6f7bee4718e, type: 2}
   foodText: {fileID: 1361847240}
   waterText: {fileID: 495539157}
   powerText: {fileID: 1172007088}
@@ -198,6 +201,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &235448699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 235448696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1e25a5b6099214ba1fd7e1d3ac4f0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyButton: {fileID: 1860683721}
 --- !u!1 &310321108
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +378,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454466, guid: 77aa36846626a41499d8b4e0fec28f4f, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 145150, guid: 77aa36846626a41499d8b4e0fec28f4f, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
