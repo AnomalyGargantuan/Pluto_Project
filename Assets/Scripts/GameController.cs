@@ -66,10 +66,10 @@ public class GameController : MonoBehaviour
 	{
 		GameObject hexGridGO = new GameObject("Grid");
 
-		for(int x = 0; x < 9; x++)
+		for(int y = 0; y < 2; y++)
 		{
 			List<GameObject> row = new List<GameObject>();
-			for( int y = 0; y < 2; y++)
+			for( int x = 0; x < 9; x++)
 			{
 				Vector2 gridPos = new Vector2(x, y);
 
@@ -79,6 +79,7 @@ public class GameController : MonoBehaviour
 				emptyRoom.transform.position = calcWorldPos(gridPos);
 				emptyRoom.transform.parent = hexGridGO.transform;
 				emptyRoom.GetComponent<EmptyRoom>().gridPos = gridPos;
+				emptyRoom.GetComponent<EmptyRoom>().parent = emptyRoom;
 
 				row.Add(emptyRoom);
 			}
@@ -96,7 +97,7 @@ public class GameController : MonoBehaviour
 	}
 
 	//Rotina que adiciona sala ao mapa
-	void addRoom(GameObject roomPrefab, GameObject grid)
+	public void addRoom(GameObject roomPrefab, GameObject grid)
 	{
 		Vector2 gridPos = grid.GetComponent<EmptyRoom>().gridPos;
 		grid.GetComponent<EmptyRoom>().isAvailable = false;
@@ -116,12 +117,12 @@ public class GameController : MonoBehaviour
 	{
 		//Set first 2 spaces unavailable (X,Y)
 		grid[0][0].GetComponent<EmptyRoom>().isAvailable = false;
-		grid[1][0].GetComponent<EmptyRoom>().isAvailable = false;
+		grid[0][1].GetComponent<EmptyRoom>().isAvailable = false;
 
 		//GameObject room = Instantiate(entrancePrefab);
 
 		//Debug.Log(grid[0][2].GetComponent<EmptyRoom>().gridPos);
-		addRoom(entrancePrefab, grid[2][0]);
+		addRoom(entrancePrefab, grid[0][2]);
 	}
 
 
