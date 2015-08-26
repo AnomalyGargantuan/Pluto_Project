@@ -123,6 +123,7 @@ public class GameController : MonoBehaviour
 
 		//Debug.Log(grid[0][2].GetComponent<EmptyRoom>().gridPos);
 		addRoom(entrancePrefab, grid[0][2]);
+		addRoom(entrancePrefab, grid[1][2]);
 	}
 
 
@@ -138,5 +139,16 @@ public class GameController : MonoBehaviour
 		return new Vector2();
 	}
 
+	public void UnmarkSelectable()
+	{
+		foreach(List<GameObject> row in grid)
+		{
+			foreach(GameObject cell in row)
+			{
+				cell.GetComponent<EmptyRoom>().selectable = false;
+				cell.GetComponent<EmptyRoom>().renderer.enabled = false;
+			}
 
+		}
+	}
 }

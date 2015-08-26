@@ -8,7 +8,7 @@ public class EmptyRoom : MonoBehaviour
 	public bool selectable = false;
 	public GameObject parent;
 
-	Renderer renderer;
+	public Renderer renderer;
 
 	void Start()
 	{
@@ -44,8 +44,10 @@ public class EmptyRoom : MonoBehaviour
 
 			gc.addRoom(room, this.parent);
 			isAvailable = false;
-			selectable = false;
+			//selectable = false;
 			renderer.enabled = false;
+
+			gc.UnmarkSelectable();
 		}
 	}
 }
