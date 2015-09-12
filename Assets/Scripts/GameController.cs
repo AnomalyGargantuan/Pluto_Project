@@ -40,10 +40,6 @@ public class GameController : MonoBehaviour
 		createGrid();
 
 		initializeRooms();
-
-		//addRoom(kitchenPrefab);
-		//addRoom(PowerPrefab);
-		//addRoom(WaterPrefab);
 	}
 
 	//Set the sizes of the rooms to calculate the world Position
@@ -108,9 +104,6 @@ public class GameController : MonoBehaviour
 		handler.gridPos = gridPos;
 
 		grid = room;
-
-		//TODO Alterar como trabalha com o mapa
-		//room.Add(handler);
 	}
 
 	void initializeRooms()
